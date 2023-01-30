@@ -16,8 +16,8 @@ person["pets"] = {"dog": "Fido", "cat": "Sox"}
 
 # iterate through all children and print out each child
 # for key in person["children"]:
-    # print(key)
+# print(key)
 
 # print out the pets in this format:
 # type of pet: dog name of pet: Fido
-print(f"type of pet: {person["pets"]["dog"]} ")
+# print(f"type of pet: {person["pets"]["dog"]} ")
