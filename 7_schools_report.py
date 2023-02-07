@@ -37,12 +37,16 @@ conference_schools = [372, 108, 107, 130]
 
 
 for school in schools:
-    school_price = school[
-        "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
-    ]
     if school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
-        if int(school_price) > 50000:
-            print(f"University Name: {school['instnm']}")
+        if (
+            school[
+                "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
+            ]
+            >= 50000
+        ):
+            print(f'University Name: {school["instnm"]}')
             print(
-                f"Total price for in-state student living off campus: {school['Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)']}"
+                f'Total price for in-state student living off campus: {school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"]}'
             )
+            print()
+            print()
