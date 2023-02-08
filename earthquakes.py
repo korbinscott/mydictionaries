@@ -49,21 +49,18 @@ eq_dict = {}
 
 for data in eq_data["features"]:
     if data["properties"]["mag"] > 6:
-        location = data["properties"]["place"]
-        magnitude = data["properties"]["mag"]
-        longitude = data["geometry"]["coordinates"][0]
-        latitude = data["geometry"]["coordinates"][1]
-        eq_id = data["id"]
-
-        eq_dict = {
-            "eq_id": eq_id,
-            "location": location,
-            "magnitude": magnitude,
-            "longitude": longitude,
-            "latitude": latitude,
+        eq_dict[(data["properties"]["place"])] = {
+            "Magnitude": data["properties"]["mag"],
+            "Longitude": data["geometry"]["coordinates"][0],
+            "Latitude": data["geometry"]["coordinates"][1],
         }
 
 print(eq_dict)
-
+print()
 
 # 3) using the eq_dict dictionary, print out the information
+for info in eq_dict:
+    print(f"Location: {info}")
+    print(f"Magnitude: {info['Magnitude']}")
+    print(f"Longitude: {info['Longitude']}")
+    print(f"Latitude: {info['Latitude']}")
